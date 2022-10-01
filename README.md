@@ -31,6 +31,7 @@ using the [official template](https://github.com/discordeno/discordeno/tree/main
 > **Note**
 > Running `deno run` now gives an error.
 > The issue is [here](https://github.com/Comamoca/teshitakun/issues/1).
+> Also write the `BOT_TOKEN` and the token of your bot in the `.env` file.
 
 ```sh
 deno run -A https://raw.githubusercontent.com/Comamoca/teshitakun/main/mod.ts
