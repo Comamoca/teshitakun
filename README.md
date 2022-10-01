@@ -16,8 +16,8 @@ using the [official template](https://github.com/discordeno/discordeno/tree/main
 <table>
   <thead>
     <tr>
-      <th style="text-align:center">🍡日本語</th>
-      <th style="text-align:center"><a href="README.md">🍔English</a></th>
+      <th style="text-align:center">🍔English</th>
+      <th style="text-align:center"><a href="README.ja.md">🍡日本語</a></th>
     </tr>
   </thead>
 </table>
