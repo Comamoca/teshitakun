@@ -64,7 +64,7 @@ MIT
 
 ### 🧩 Modules
 
-- [Special Thanks](#SpecialThanks)
+- [Special Thanks](#Special-Thanks)
 
 ## 💕 Special Thanks
 
