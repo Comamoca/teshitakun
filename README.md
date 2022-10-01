@@ -64,7 +64,7 @@ MIT
 
 ### 🧩 Modules
 
-- [Special Thanks](#Special Thanks)
+- [Special Thanks](#SpecialThanks)
 
 ## 💕 Special Thanks
 
@@ -72,4 +72,4 @@ MIT
 [discordeno](https://github.com/discordeno/discordeno)
 
 - dax
-[](https://github.com/dsherret/dax)
+[dax](https://github.com/dsherret/dax)
