@@ -30,7 +30,7 @@
 ## 🚀 使い方
 
 ```sh
-deno run -A 
+deno run -A https://raw.githubusercontent.com/Comamoca/teshitakun/main/mod.ts
 
 # Cloneして実行
 git clone https://github.com/Comamoca/teshitakun
@@ -43,7 +43,7 @@ deno run -A mod.ts
 Deno Install
 
 ```sh
-deno install -A
+deno install -A https://raw.githubusercontent.com/Comamoca/teshitakun/main/mod.ts
 ```
 
 ## ⛏️   開発

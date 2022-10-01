@@ -29,7 +29,7 @@ using the [official template](https://github.com/discordeno/discordeno/tree/main
 ## 🚀 How to use
 
 ```sh
-deno run -A 
+deno run -A https://raw.githubusercontent.com/Comamoca/teshitakun/main/mod.ts
 
 # Clone and run
 git clone https://github.com/Comamoca/teshitakun
@@ -42,7 +42,7 @@ deno run -A mod.ts
 Deno Install
 
 ```sh
-deno install -A
+deno install -A https://raw.githubusercontent.com/Comamoca/teshitakun/main/mod.ts
 ```
 
 ## ⛏️   Development
