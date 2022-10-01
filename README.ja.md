@@ -49,7 +49,9 @@ deno install -A
 ## ⛏️   開発
 
 ```sh
-# 開発用の環境を構築する方法をここに書きましょう。
+git clone https://github.com/Comamoca/teshitakun
+cd teshitakun
+deno run -A mod.ts
 ```
 ## 📝 Todo
 
