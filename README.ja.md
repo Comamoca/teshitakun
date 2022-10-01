@@ -12,6 +12,8 @@
 [公式のテンプレート](https://github.com/discordeno/discordeno/tree/main/template)を使用しています。
 
 
+このBotの追加はこちらから[](https://discord.com/api/oauth2/authorize?client_id=939773708552273951&permissions=3072&scope=bot)
+
 </div>
 
 <table>
@@ -32,6 +34,7 @@
 > **Note**
 > 現在`deno run`を実行するとエラーが発生します。
 > Issueは[こちら](https://github.com/Comamoca/teshitakun/issues/1)です。
+>
 > また、`.env`ファイルに`BOT_TOKEN`とBotのトークンを書き込んでください。
 
 ```sh
