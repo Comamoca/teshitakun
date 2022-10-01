@@ -29,6 +29,10 @@
 
 ## 🚀 使い方
 
+> **Note**
+> 現在`deno run`を実行するとエラーが発生します。
+> Issueは[こちら](https://github.com/Comamoca/teshitakun/issues/1)です。
+
 ```sh
 deno run -A https://raw.githubusercontent.com/Comamoca/teshitakun/main/mod.ts
 

@@ -28,6 +28,10 @@ using the [official template](https://github.com/discordeno/discordeno/tree/main
 
 ## 🚀 How to use
 
+> **Note**
+> Running `deno run` now gives an error.
+> The issue is [here](https://github.com/Comamoca/teshitakun/issues/1).
+
 ```sh
 deno run -A https://raw.githubusercontent.com/Comamoca/teshitakun/main/mod.ts
 
