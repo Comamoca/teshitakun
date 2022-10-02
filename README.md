@@ -40,12 +40,13 @@ deno run -A https://raw.githubusercontent.com/Comamoca/teshitakun/main/mod.ts
 # Clone and run
 git clone https://github.com/Comamoca/teshitakun
 cd teshitakun
+export BOT_TOKEN="Your Token"
 deno run -A mod.ts
 ```
 
 ## ⬇️  Install
 
-Deno Install
+Deno Install(cant work now)
 
 ```sh
 deno install -A https://raw.githubusercontent.com/Comamoca/teshitakun/main/mod.ts
@@ -56,7 +57,10 @@ deno install -A https://raw.githubusercontent.com/Comamoca/teshitakun/main/mod.t
 ```sh
 git clone https://github.com/Comamoca/teshitakun
 cd teshitakun
+export BOT_TOKEN="Your Token"
 deno run -A mod.ts
+# or 
+vr start
 ```
 
 ## 📝 Todo
