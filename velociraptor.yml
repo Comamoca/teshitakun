@@ -1,0 +1,11 @@
+envFile:
+  - .env
+
+allow:
+  - write
+  - read
+  - net
+  - env
+
+scripts:
+  start: deno run mod.ts
