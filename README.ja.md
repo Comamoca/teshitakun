@@ -36,6 +36,8 @@
 > Issueは[こちら](https://github.com/Comamoca/teshitakun/issues/1)です。
 >
 > また、`.env`ファイルに`BOT_TOKEN`とBotのトークンを書き込んでください。
+>
+> タスクランナーは[velociraptor](https://velociraptor.run/)を使用しています。
 
 ```sh
 deno run -A https://raw.githubusercontent.com/Comamoca/teshitakun/main/mod.ts
