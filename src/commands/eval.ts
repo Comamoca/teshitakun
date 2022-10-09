@@ -7,6 +7,9 @@ import { createCommand } from "./mod.ts";
 import { $ } from "https://deno.land/x/dax@0.12.0/mod.ts";
 import { humanizeMilliseconds } from "../utils/helpers.ts";
 import { BOT_TOKEN } from "../../configs.ts";
+import { logger } from "../utils/logger.ts";
+
+const log = logger({ name: "Eval" });
 
 const denoEval = (cmd: string) => {
   const result = $`deno eval ${cmd}`.stdout("piped");
@@ -38,6 +41,9 @@ createCommand({
       const exec_time = Date.now() - bftime;
 
       if (result.stdout.includes(BOT_TOKEN)) {
+        log.warn(
+          `Result include BOT_TOKEN so transmission of result was canceled.`
+        );
         await bot.helpers.sendInteractionResponse(
           interaction.id,
           interaction.token,
