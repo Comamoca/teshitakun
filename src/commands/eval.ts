@@ -22,8 +22,8 @@ createCommand({
   options: [
     {
       type: ApplicationCommandOptionTypes.String,
-      name: "実行するDenoコードを指定します。",
-      description: "サンプル",
+      name: "code",
+      description: "実行するDenoコード",
       required: true,
     },
   ],
@@ -42,7 +42,7 @@ createCommand({
 
       if (result.stdout.includes(BOT_TOKEN)) {
         log.warn(
-          `Result include BOT_TOKEN so transmission of result was canceled.`
+          `Result include BOT_TOKEN so transmission of result was canceled.`,
         );
         await bot.helpers.sendInteractionResponse(
           interaction.id,
@@ -50,10 +50,9 @@ createCommand({
           {
             type: InteractionResponseTypes.ChannelMessageWithSource,
             data: {
-              content:
-                "⚠️ 結果にこのBotのTokenが含まれてたためメッセージの送信に失敗しました",
+              content: "⚠️ 結果にこのBotのTokenが含まれてたためメッセージの送信に失敗しました",
             },
-          }
+          },
         );
       } else {
         await bot.helpers.sendInteractionResponse(
@@ -62,15 +61,14 @@ createCommand({
           {
             type: InteractionResponseTypes.ChannelMessageWithSource,
             data: {
-              content: `🦕 Deno Eval\n\nYour Code:\`\`\`js\n${
-                msg.value
-              }\`\`\`\nResult: ${
-                result.stdout
-              }\nExecution time: ${exec_time}ms (${humanizeMilliseconds(
-                exec_time
-              )})`,
+              content:
+                `🦕 Deno Eval\n\nYour Code:\`\`\`js\n${msg.value}\`\`\`\nResult: ${result.stdout}\nExecution time: ${exec_time}ms (${
+                  humanizeMilliseconds(
+                    exec_time,
+                  )
+                })`,
             },
-          }
+          },
         );
       }
     }
