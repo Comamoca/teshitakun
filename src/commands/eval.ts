@@ -11,11 +11,6 @@ import { logger } from "../utils/logger.ts";
 
 const log = logger({ name: "Eval" });
 
-const denoEval = (cmd: string) => {
-  const result = $`deno eval ${cmd}`.stdout("piped");
-  return result.stdout;
-};
-
 const choice = (args: string) => {
   return {
     name: args,
@@ -39,6 +34,8 @@ createCommand({
       choices: [
         choice("deno"),
         choice("bash"),
+        choice("python2"),
+        choice("python3"),
       ],
       required: true,
       description: "実行する言語",
@@ -97,10 +94,19 @@ createCommand({
     let result;
 
     try {
-      if (interactionData.lang === "deno") {
-        result = await $`deno eval ${interactionData.code}`.stdout("piped");
-      } else if (interactionData.lang === "bash") {
-        result = await $`bash -c ${interactionData.code}`.stdout("piped");
+      switch (interactionData.lang) {
+        case "deno":
+          result = await $`deno eval ${interactionData.code}`.stdout("piped");
+          break;
+        case "bash":
+          result = await $`bash -c ${interactionData.code}`.stdout("piped");
+          break;
+        case "python2":
+          result = await $`python2 -c ${interactionData.code}`.stdout("piped");
+          break;
+        case "python3":
+          result = await $`python3 -c ${interactionData.code}`.stdout("piped");
+          break;
       }
     } catch (err) {
       await bot.helpers.sendInteractionResponse(
@@ -136,8 +142,16 @@ createCommand({
       );
     } else {
       let hilightLang: string = interactionData.lang;
-      if (interactionData.lang === "deno") {
-        hilightLang = "js";
+      switch (interactionData.lang) {
+        case "deno":
+          hilightLang = "js";
+          break;
+        case "python2":
+          hilightLang = "python";
+          break;
+        case "python3":
+          hilightLang = "python";
+          break;
       }
       await bot.helpers.sendInteractionResponse(
         interaction.id,
@@ -146,7 +160,7 @@ createCommand({
           type: InteractionResponseTypes.ChannelMessageWithSource,
           data: {
             content:
-              `🦕 Deno Eval\n\nYour Code:\`\`\`${hilightLang}\n${interactionData.code}\`\`\`\nResult: ${result?.stdout}\nExecution time: ${exec_time}ms (${
+              `🦕 Eval\n\nYour Code:\`\`\`${hilightLang}\n${interactionData.code}\`\`\`\nResult: ${result?.stdout}\nExecution time: ${exec_time}ms (${
                 humanizeMilliseconds(
                   exec_time,
                 )
