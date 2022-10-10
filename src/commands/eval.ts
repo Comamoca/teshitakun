@@ -38,6 +38,7 @@ createCommand({
       name: "lang",
       choices: [
         choice("deno"),
+        choice("bash"),
       ],
       required: true,
       description: "実行する言語",
@@ -98,7 +99,10 @@ createCommand({
     try {
       if (interactionData.lang === "deno") {
         result = await $`deno eval ${interactionData.code}`.stdout("piped");
-      }     } catch (err) {
+      } else if (interactionData.lang === "bash") {
+        result = await $`bash -c ${interactionData.code}`.stdout("piped");
+      }
+    } catch (err) {
       await bot.helpers.sendInteractionResponse(
         interaction.id,
         interaction.token,
@@ -131,6 +135,10 @@ createCommand({
         },
       );
     } else {
+      /*let hilightLang: string = interactionData.lang;
+      if (interactionData.lang === "deno") {
+        hilightLang = "js";
+      }*/
       await bot.helpers.sendInteractionResponse(
         interaction.id,
         interaction.token,
@@ -138,7 +146,7 @@ createCommand({
           type: InteractionResponseTypes.ChannelMessageWithSource,
           data: {
             content:
-              `🦕 Deno Eval\n\nYour Code:\`\`\`js\n${interactionData.code}\`\`\`\nResult: ${result?.stdout}\nExecution time: ${exec_time}ms (${
+              `🦕 Deno Eval\n\nYour Code:\`\`\`${"js"/*hilightLang*/}\n${interactionData.code}\`\`\`\nResult: ${result?.stdout}\nExecution time: ${exec_time}ms (${
                 humanizeMilliseconds(
                   exec_time,
                 )
